@@ -18,6 +18,16 @@
         #controls.hidden #toggle-controls:before {
             content: "%webview.showControls%";
         }
+
+        #topology-panel #toggle-topology:before {
+            content: "%webview.hideTopology%";
+            font-size: 12px;
+            font-weight: normal;
+        }
+
+        #topology-panel.minimized #toggle-topology:before {
+            content: "%webview.showTopology%";
+        }
     </style>
 </head>
 
@@ -262,6 +272,17 @@
             <div class="div-measure-button">
                 <button id="measure-settings" class="measure" title="%webview.measureSettings%"></button>
             </div>
+        </div>
+    </div>
+
+    <!-- 拓扑图面板 -->
+    <div id="topology-panel" class="minimized">
+        <div id="topology-header">
+            <span id="topology-title">%webview.topology%</span>
+            <div id="toggle-topology"></div>
+        </div>
+        <div id="topology-content">
+            <canvas id="topology-canvas"></canvas>
         </div>
     </div>
 

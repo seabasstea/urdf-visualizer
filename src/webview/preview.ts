@@ -6,6 +6,7 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { URDFJoint, URDFLink } from "urdf-loader";
 import { ModuleMeasure } from "./module_measure";
 import { ModuleURDF } from "./module_urdf";
+import { ModuleTopology } from "./module_topology";
 import { DomElements } from "./dom_tools";
 import { createScene } from "./threejs_tools";
 
@@ -30,6 +31,7 @@ class Main {
     domElements: DomElements;
     module_urdf: ModuleURDF;
     module_measure: ModuleMeasure;
+    module_topology: ModuleTopology;
 
     scene: THREE.Scene;
     camera: THREE.PerspectiveCamera;
@@ -88,6 +90,9 @@ class Main {
             () => this.domElements.measureUnhoverCallback()
         );
 
+        // 拓扑图模块
+        this.module_topology = new ModuleTopology();
+
         // 添加鼠标离开渲染器时的事件处理
         this.renderer.domElement.addEventListener("mouseleave", (event) => {
             this.module_urdf.onMouseLeaveCallback();
@@ -105,6 +110,11 @@ class Main {
 
         // 更新关节列表
         this.updateJointList();
+
+        // 更新拓扑图
+        if (this.module_urdf.robot) {
+            this.module_topology.update(this.module_urdf.robot);
+        }
 
         this.render();
     }

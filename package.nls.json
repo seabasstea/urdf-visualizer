@@ -65,5 +65,8 @@
     "webview.measurePointSize": "Point Size",
     "webview.measurePointSizeHint": "Set the size of points in measurement tool.",
     "webview.measureMeshColor": "Surface Color",
-    "webview.measureMeshColorHint": "Set the color of indicator surface in when measuring area."
+    "webview.measureMeshColorHint": "Set the color of indicator surface in when measuring area.",
+    "webview.topology": "Topology",
+    "webview.hideTopology": "hide topology",
+    "webview.showTopology": "show topology"
 }

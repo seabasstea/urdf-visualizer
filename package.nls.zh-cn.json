@@ -65,5 +65,8 @@
     "webview.measurePointSize": "点尺寸",
     "webview.measurePointSizeHint": "设置测量工具中点的尺寸.",
     "webview.measureMeshColor": "面颜色",
-    "webview.measureMeshColorHint": "设置测量面积时指示面的颜色."
+    "webview.measureMeshColorHint": "设置测量面积时指示面的颜色.",
+    "webview.topology": "拓扑图",
+    "webview.hideTopology": "隐藏拓扑图",
+    "webview.showTopology": "显示拓扑图"
 }

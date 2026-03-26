@@ -531,3 +531,62 @@ div.div-measure-button:has(> button.measure.checked):hover {
         transform: translateY(20px);
     }
 }
+
+/* Topology panel */
+#topology-panel {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 350px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid #bbb;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 10;
+}
+
+#topology-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 8px;
+    cursor: pointer;
+    user-select: none;
+}
+
+#topology-title {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#topology-header #toggle-topology {
+    text-align: center;
+    transition: 0.1s opacity linear;
+    font-size: 12px;
+}
+
+#topology-header #toggle-topology:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#topology-content {
+    height: 250px;
+}
+
+#topology-panel.minimized #topology-content {
+    height: 0;
+    display: none;
+}
+
+#topology-panel.minimized #toggle-topology {
+    opacity: 0.5;
+}
+
+#topology-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
